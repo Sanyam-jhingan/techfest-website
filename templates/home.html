@@ -1,0 +1,754 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>GNDU techfest</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="img/icons/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/72x72.png">
+  <link rel="apple-touch-icon-precomposed" href="img/icons/default.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static "lib/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static "lib/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+  <link href="{% static "lib/owlcarousel/owl.carousel.min.css" %}" rel="stylesheet">
+  <link href="{% static "lib/owlcarousel/owl.theme.min.css" %}" rel="stylesheet">
+  <link href="{% static "lib/owlcarousel/owl.transitions.min.css" %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static "css/style.css" %}" rel="stylesheet">
+
+  <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
+  <link href="#" id="colour-scheme" rel="stylesheet">
+
+
+</head>
+
+<body class="page-index has-hero">
+  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+  <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.1">
+
+    <!-- ======== @Region: #navigation ======== -->
+    <div id="navigation" class="wrapper">
+      <!--Hidden Header Region-->
+      <div class="header-hidden collapse">
+        <div class="header-hidden-inner container">
+          <div class="row">
+            <div class="col-md-3">
+              <h3>
+                  About Us
+                </h3>
+              <p>brogrammer creater of this site</p>
+              <a href="{% url "about" %}" class="btn btn-more"><i class="fa fa-plus"></i> Learn more</a>
+            </div>
+            <div class="col-md-3">
+              <!--@todo: replace with company contact details-->
+              <h3>
+                  Contact Us
+                </h3>
+              <address>
+                  <strong>brogramers bro@gmail.com</strong>
+                  <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
+                  abc road xyz colony
+                  <br>
+                  <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
+                  000000000
+                  <br>
+                  <abbr title="Email"><i class="fa fa-envelope-alt"></i></abbr>
+                  gndu@gmail.com
+                </address>
+            </div>
+            <div class="col-md-6">
+              <!--Colour & Background Switch for demo - @todo: remove in production-->
+              <h3>
+                  Theme Variations
+                </h3>
+              <div class="switcher">
+                <div class="cols">
+                  Backgrounds:
+                  <br>
+                  <a href="#benches" class="background benches active" title="Benches">Benches</a> <a href="#boots" class="background boots " title="Boots">Boots</a> <a href="#buildings" class="background buildings " title="Buildings">Buildings</a>
+                  <a
+                    href="#city" class="background city " title="City">City</a> <a href="#metro" class="background metro " title="Metro">Metro</a>
+                </div>
+                <div class="cols">
+                  Colours:
+                  <br>
+                  <a href="#orange" class="colour orange active" title="Orange">Orange</a> <a href="#green" class="colour green " title="Green">Green</a> <a href="#blue" class="colour blue " title="Blue">Blue</a> <a href="#lavender" class="colour lavender "
+                    title="Lavender">Lavender</a>
+                </div>
+              </div>
+              <p>
+                <small>Selection is not persistent.</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Header & navbar-branding region-->
+      <div class="header">
+        <div class="header-inner container">
+          <div class="row">
+            <div class="col-md-8">
+              <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
+              <a class="navbar-brand" href="{% url "home" %}" title="Home">
+                <h1 class="hidden">
+                    <img src="{% static "img/logo.png" %}" alt="gndufest Logo">
+                    techfest
+                  </h1>
+              </a>
+              <div class="navbar-slogan">
+                write something
+                <br> here also
+              </div>
+            </div>
+            <!--header rightside-->
+            <div class="col-md-4">
+              <!--user menu-->
+              <ul class="list-inline user-menu pull-right">
+                <li class="user-button"><a class="btn btn-primary btn-hh-trigger" role="button" data-toggle="collapse" data-target=".header-hidden">Open</a></li>
+              </ul>
+              <ul class="list-inline user-menu pull-right">
+                <li class="user-register"><i class="fa fa-edit text-primary "></i> <a href="{% url "accounts:signup" %}" class="text-uppercase">Register</a></li>
+                <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a href="{% url "accounts:login"  %}" class="text-uppercase">Login</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="navbar navbar-default">
+          <!--mobile collapse menu button-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <!--social media icons-->
+          <div class="navbar-text social-media social-media-inline pull-right">
+            <!--@todo: replace with company social media details-->
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </div>
+          <!--everything within this div is collapsed on mobile-->
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" id="main-menu">
+              <li class="icon-link">
+                <a href="{% url "home" %}"><i class="fa fa-home"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Main Menu<b class="caret"></b></a>
+                <!-- Dropdown Menu -->
+                <ul class="dropdown-menu">
+
+                  <li><a href="elements.html" tabindex="-1" class="menu-item">Events</a></li>
+                  <li><a href="{% url "about" %}" tabindex="-1" class="menu-item">write something</a></li>
+                  <li><a href="{% url "accounts:login"  %}" tabindex="-1" class="menu-item">Login</a></li>
+                  <li><a href="{% url "accounts:signup" %}" tabindex="-1" class="menu-item">Sign-Up</a></li>
+
+                </ul>
+              </li>
+              <li><a href="#">Gallery</a></li>
+              <li class="dropdown dropdown-mm">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mega Menu<b class="caret"></b></a>
+                <!-- Dropdown Menu -->
+                <ul class="dropdown-menu dropdown-menu-mm dropdown-menu-persist">
+                  <li class="row">
+                    <ul class="col-md-6">
+                      <li class="dropdown-header">Events</li>
+                      <li><a href="#">WorkShop</a></li>
+                      <li><a href="#">Important Date</a></li>
+                      <li><a href="#">Sports</a></li>
+                      <li><a href="#">Sponsar</a></li>
+                    </ul>
+                    <ul class="col-md-6">
+                      <li class="dropdown-header">bla bla</li>
+                      <li><a href="#">abc1</a></li>
+                      <li><a href="#">abc2</a></li>
+                      <li><a href="#">abc3</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-footer">
+                    <div class="row">
+                      <div class="col-md-7">bla bla <strong>bla bla</strong></div>
+                      <div class="col-md-5">
+                        <a href="#" class="btn btn-more btn-lg pull-right"><i class="fa fa-cloud-download"></i> Register</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="hero" id="highlighted">
+      <div class="inner">
+        <!--Slideshow-->
+        <div id="highlighted-slider" class="container">
+          <div class="item-slider" data-toggle="owlcarousel" data-owlcarousel-settings='{"singleItem":true, "navigation":true, "transitionStyle":"fadeUp"}'>
+            <!--Slideshow content-->
+            <!--Slide 1-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 col-md-push-6 item-caption">
+                  <h2 class="h1 text-weight-light">
+                      Welcome to <span class="text-primary">techfest</span>
+                    </h2>
+                  <h4>
+                      blablabla   WRite something here  (HEADING) By varjeet
+                  </h4>
+                  <p>bla bla by SAhib </p>
+                  <a href="{% url "accounts:signup" %}" class="btn btn-more btn-lg i-right">Register <i class="fa fa-plus"></i></a>
+                </div>
+                <div class="col-md-6 col-md-pull-6 hidden-xs">
+                  <img src="{% static "img/slides/slide1.png" %}" alt="Slide 1" class="center-block img-responsive">
+                </div>
+              </div>
+            </div>
+            <!--Slide 2-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 text-right-md item-caption">
+                  <h2 class="h1 text-weight-light">
+                      <span class="text-primary">GNDU</span> TechFest
+                    </h2>
+                  <h4>
+                      bla bla bla by sahib
+                    </h4>
+                  <p>bla bla by sahib</p>
+                  <a href="#" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>
+                </div>
+                <div class="col-md-6 hidden-xs">
+                  <img src="{% static "img/slides/slide2.png" %}" alt="Slide 2" class="center-block img-responsive">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #content ======== -->
+  <div id="content">
+    <!-- Mission Statement -->
+    <div class="mission text-center block block-pd-sm block-bg-noise">
+      <div class="container">
+        <h2 class="text-shadow-white">
+          bla bla bla bla by sahib
+            <a href="{% url "about" %}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+          </h2>
+      </div>
+    </div>
+    <!--Showcase-->
+    <div class="showcase block block-border-bottom-grey">
+      <div class="container">
+        <h2 class="block-title">
+            Events
+          </h2>
+        <p>bla bla by sahib</p>
+        <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event1.png" %}" alt="Event 1 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 1</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 1</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event2.png" %}" alt="Event 2 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 2</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 2</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event3.png" %}" alt="Event 3 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 3</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 3</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event4.png" %}" alt="Event 4 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 4</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 4</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event5.png" %}" alt="Event 5 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 5</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 5</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event6.png" %}" alt="Event 6 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 6</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 6</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event7.png" %}" alt="Event 7 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 7</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 7</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event8.png" %}" alt="Event 8 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 8</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 8</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event9.png" %}" alt="Event 9 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 9</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 9</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event10.png" %}" alt="Event 10 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 10</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 10</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event11.png" %}" alt="Event 11 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 11</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 11</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event12.png" %}" alt="Event 12 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 12</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 12</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Services -->
+    <div class="services block block-bg-gradient block-border-bottom">
+      <div class="container">
+        <h2 class="block-title">
+            Our bla bla by sahib
+          </h2>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+              bla bla by sahib
+              </h4>
+            <p>bla bla bla by sahib</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+              bla bla by sahib
+              </h4>
+            <p>bla bla by sahib</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+                bla bla by sahib  Support
+              </h4>
+            <p>bla bla by sahib</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pricing -->
+    <div class="block-contained">
+      <h2 class="block-title">
+        Our Sponsar
+        </h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel panel-default panel-pricing text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  status<em>brew</em>
+                </h4>
+            </div>
+            <div class="panel-pricing-price"># <span class="digits">a starup</span> </div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>by sahib</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">Read more</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  spon<em>1</em>
+                </h4>
+            </div>
+            <div class="panel-pricing-price"> <span class="digits">bla bla</span> .</div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>by sahib</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">Read more</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  sponsar3
+                  <span class="panel-pricing-popular"><i class="fa fa-thumbs-up"></i> abc</span>
+                </h4>
+            </div>
+            <div class="panel-pricing-price">. <span class="digits">bla bla</span> .</div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>by sahib</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">read more</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="panel panel-default panel-pricing text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                sponsar 4
+                </h4>
+            </div>
+            <div class="panel-pricing-price">abkc <span class="digits">xyz</span> asa.</div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">REad more</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+Background image callout with CSS overlay
+Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQuery .block-bg-overlay = overlays the background image, colour is inherited from block-bg-* classes .block-bg-overlay-NUMBER = determines opcacity value of overlay from 1-9 (default is 5) ie. .block-bg-overlay-2 or .block-bg-overlay-6
+-->
+    <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK1088.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
+      <h2 class="h-xlg h1 m-a-0">
+          <span data-counter-up>100,000,0</span>s
+        </h2>
+      <h3 class="h-lg m-t-0 m-b-lg">
+          number of participant registered
+        </h3>
+      <p>
+        <a href="#" class="btn btn-more btn-lg i-right">Join today! <i class="fa fa-angle-right"></i></a>
+      </p>
+    </div>
+
+  <!-- /content -->
+  <!-- Call out block -->
+  <div class="block block-pd-sm block-bg-primary">
+    <div class="container">
+      <div class="row">
+        <h3 class="col-md-4">
+            Some of our Sponsar
+          </h3>
+        <div class="col-md-8">
+          <div class="row">
+            <!--Client logos should be within a 120px wide by 60px height image canvas-->
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 1">
+                  <img src="{% static "img/clients/client1.png" %}" alt="Client 1 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 2">
+                  <img src="{% static "img/clients/client2.png" %}" alt="Client 2 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 3">
+                  <img src="{% static "img/clients/client3.png" %}" alt="Client 3 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 4">
+                  <img src="{% static "img/clients/client4.png" %}" alt="Client 4 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 5">
+                  <img src="{% static "img/clients/client5.png" %}" alt="Client 5 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 6">
+                  <img src="{% static "img/clients/client6.png" %}" alt="Client 6 logo" class="img-responsive">
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #footer ======== -->
+  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="{% static "img/bg_footer-map.png" %}" data-stellar-background-ratio="0.4">
+    <div class="container">
+
+      <div class="row" id="contact">
+
+        <div class="col-md-3">
+          <address>
+              <strong>Address</strong>
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i> GNDU asr
+              <br>
+              <i class="fa fa-phone fa-fw text-primary"></i> 00000000
+              <br>
+              <i class="fa fa-envelope-o fa-fw text-primary"></i> gndu@gmail.com
+              <br>
+            </address>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="text-uppercase">
+              Contact Us
+            </h4>
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="text-uppercase">
+              Follow Us On:
+            </h4>
+          <!--social media icons-->
+          <div class="social-media social-media-stacked">
+            <!--@todo: replace with company social media details-->
+            <a href="#"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
+            <a href="#"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+            <a href="#"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
+            <a href="#"><i class="fa fa-google-plus fa-fw"></i> Google+</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row subfooter">
+        <!--@todo: replace with company copyright details-->
+        <div class="col-md-7">
+          <p>Copyright © Brogrammer</p>
+          <div class="credits">
+
+
+          </div>
+        </div>
+        <div class="col-md-5">
+          <ul class="list-inline pull-right">
+            <li><a href="#">Terms</a></li>
+            <li><a href="{% url "privacy"  %}">Privacy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="#top" class="scrolltop">Top</a>
+
+    </div>
+  </footer>
+
+  <!-- Required JavaScript Libraries -->
+  <script src="{% static "lib/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "lib/bootstrap/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "lib/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "lib/stellar/stellar.min.js" %}"></script>
+  <script src="{% static "lib/waypoints/waypoints.min.js" %}"></script>
+  <script src="{% static "lib/counterup/counterup.min.js" %}"></script>
+  <script src="{% static "contactform/contactform.js" %}"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="{% static "js/custom.js" %}"></script>
+
+  <!--Custom scripts demo background & colour switcher - OPTIONAL -->
+  <script src="{% static "js/color-switcher.js" %}"></script>
+
+  <!--Contactform script -->
+  <script src="{% static "contactform/contactform.js" %}"></script>
+
+</body>
+
+</html>
