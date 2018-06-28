@@ -5,29 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>GNDU techfest</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
 
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
-
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
-
-  <!-- Fav and touch icons -->
-  <link rel="shortcut icon" href="img/icons/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/72x72.png">
-  <link rel="apple-touch-icon-precomposed" href="img/icons/default.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
@@ -47,70 +25,11 @@
   <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
   <link href="#" id="colour-scheme" rel="stylesheet">
 
-
 </head>
 
 <body class="page-index has-hero">
-  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
-  <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.1">
 
-    <!-- ======== @Region: #navigation ======== -->
-    <div id="navigation" class="wrapper">
-      <!--Hidden Header Region-->
-      <div class="header-hidden collapse">
-        <div class="header-hidden-inner container">
-          <div class="row">
-            <div class="col-md-3">
-              <h3>
-                  About Us
-                </h3>
-              <p>brogrammer creater of this site</p>
-              <a href="{% url "about" %}" class="btn btn-more"><i class="fa fa-plus"></i> Learn more</a>
-            </div>
-            <div class="col-md-3">
-              <!--@todo: replace with company contact details-->
-              <h3>
-                  Contact Us
-                </h3>
-              <address>
-                  <strong>brogramers bro@gmail.com</strong>
-                  <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
-                  abc road xyz colony
-                  <br>
-                  <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
-                  000000000
-                  <br>
-                  <abbr title="Email"><i class="fa fa-envelope-alt"></i></abbr>
-                  gndu@gmail.com
-                </address>
-            </div>
-            <div class="col-md-6">
-              <!--Colour & Background Switch for demo - @todo: remove in production-->
-              <h3>
-                  Theme Variations
-                </h3>
-              <div class="switcher">
-                <div class="cols">
-                  Backgrounds:
-                  <br>
-                  <a href="#benches" class="background benches active" title="Benches">Benches</a> <a href="#boots" class="background boots " title="Boots">Boots</a> <a href="#buildings" class="background buildings " title="Buildings">Buildings</a>
-                  <a
-                    href="#city" class="background city " title="City">City</a> <a href="#metro" class="background metro " title="Metro">Metro</a>
-                </div>
-                <div class="cols">
-                  Colours:
-                  <br>
-                  <a href="#orange" class="colour orange active" title="Orange">Orange</a> <a href="#green" class="colour green " title="Green">Green</a> <a href="#blue" class="colour blue " title="Blue">Blue</a> <a href="#lavender" class="colour lavender "
-                    title="Lavender">Lavender</a>
-                </div>
-              </div>
-              <p>
-                <small>Selection is not persistent.</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <!--Header & navbar-branding region-->
       <div class="header">
         <div class="header-inner container">
@@ -134,10 +53,7 @@
               <ul class="list-inline user-menu pull-right">
                 <li class="user-button"><a class="btn btn-primary btn-hh-trigger" role="button" data-toggle="collapse" data-target=".header-hidden">Open</a></li>
               </ul>
-              <ul class="list-inline user-menu pull-right">
-                <li class="user-register"><i class="fa fa-edit text-primary "></i> <a href="{% url "accounts:signup" %}" class="text-uppercase">Register</a></li>
-                <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a href="{% url "accounts:login"  %}" class="text-uppercase">Login</a></li>
-              </ul>
+
             </div>
           </div>
         </div>
@@ -147,12 +63,20 @@
           <!--mobile collapse menu button-->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           <!--social media icons-->
+          <div class="">
+            <ul class="list-inline user-menu pull-right">
+              <li class="user-register"><i class="fa fa-edit text-primary "></i> <a href="{% url "accounts:signup" %}" class="text-uppercase">Register</a></li>
+              <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a href="{% url "accounts:login"  %}" class="text-uppercase">Login</a></li>
+            </ul>
+
+          </div>
           <div class="navbar-text social-media social-media-inline pull-right">
             <!--@todo: replace with company social media details-->
-            <a href="#"><i class="fa fa-twitter"></i></a>
+
+
             <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
+
+            <a href="#"><i class="fa fa-instagram"></i></a>
           </div>
           <!--everything within this div is collapsed on mobile-->
           <div class="navbar-collapse collapse">
@@ -203,6 +127,7 @@
                 </ul>
               </li>
             </ul>
+
           </div>
           <!--/.navbar-collapse -->
         </div>
@@ -222,7 +147,7 @@
                       Welcome to <span class="text-primary">techfest</span>
                     </h2>
                   <h4>
-                      blablabla   WRite something here  (HEADING) By varjeet
+                      blablabla   WRite something here  (HEADING) By sahib
                   </h4>
                   <p>bla bla by SAhib </p>
                   <a href="{% url "accounts:signup" %}" class="btn btn-more btn-lg i-right">Register <i class="fa fa-plus"></i></a>
@@ -256,17 +181,7 @@
     </div>
   </div>
 
-  <!-- ======== @Region: #content ======== -->
-  <div id="content">
-    <!-- Mission Statement -->
-    <div class="mission text-center block block-pd-sm block-bg-noise">
-      <div class="container">
-        <h2 class="text-shadow-white">
-          bla bla bla bla by sahib
-            <a href="{% url "about" %}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-          </h2>
-      </div>
-    </div>
+
     <!--Showcase-->
     <div class="showcase block block-border-bottom-grey">
       <div class="container">
@@ -699,10 +614,10 @@ Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQu
           <!--social media icons-->
           <div class="social-media social-media-stacked">
             <!--@todo: replace with company social media details-->
-            <a href="#"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
+            <!-- <a href="#"><i class="fa fa-twitter fa-fw"></i> Twitter</a> -->
             <a href="#"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-            <a href="#"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
-            <a href="#"><i class="fa fa-google-plus fa-fw"></i> Google+</a>
+            <!-- <a href="#"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a> -->
+            <a href="#"><i class="fa fa-instagram fa-fw"></i> Instagram</a>
           </div>
         </div>
 
