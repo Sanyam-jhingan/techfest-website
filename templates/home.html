@@ -37,14 +37,14 @@
 <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.1">
 
 
-     
+
       <div class="container">
-        
+
         <div class="navbar navbar-default">
           <!--mobile collapse menu button-->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           <!--social media icons-->
-          
+
           <div class="navbar-text social-media social-media-inline pull-right">
             <!--@todo: replace with company social media details-->
             <div class="">
@@ -52,15 +52,22 @@
                <a href="#"><i class="fa fa-facebook"></i></a>
 
                <a href="#"><i class="fa fa-instagram"></i></a>
-              <li class="user-register"><i class="fa fa-edit text-primary "></i> <a href="{% url "accounts:signup" %}" class="text-uppercase">Register</a></li>
-              <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a href="{% url "accounts:login"  %}" class="text-uppercase">Login</a></li>
-            </ul>
+               {% if request.user.is_authenticated %}
+                    <a href="accounts/logout">Logout</a>
+                    <p>{{request.user}}</p>
+               {% else %}
+                    <li class="user-register"><i class="fa fa-edit text-primary "></i> <a href="{% url "accounts:signup" %}" class="text-uppercase">Register</a></li>
+                    <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a href="{% url "accounts:login"  %}" class="text-uppercase">Login</a></li>
+                  </ul>
+              {% endif %}
+
+
 
 
           </div>
 
 
-           
+
           </div>
           <a class="navbar-brand" href="{% url "home" %}" title="Home">
                 <h1 class="hidden">
@@ -121,7 +128,7 @@
           <!--/.navbar-collapse -->
         </div>
       </div>
-    
+
     <div class="hero" id="highlighted">
       <div class="inner">
         <!--Slideshow-->
@@ -136,9 +143,9 @@
                       Welcome to <span class="text-primary">techfest</span>
                     </h2>
                   <h4>
-                      blablabla   WRite something here  (HEADING) By varjeet
+                      blablabla   WRite something here  (HEADING) bla
                   </h4>
-                  <p>bla bla by SAhib </p>
+                  <p>bla bla bla </p>
                   <a href="{% url "accounts:signup" %}" class="btn btn-more btn-lg i-right">Register <i class="fa fa-plus"></i></a>
                 </div>
                 <div class="col-md-6 col-md-pull-6 hidden-xs">
@@ -154,9 +161,9 @@
                       <span class="text-primary">GNDU</span> TechFest
                     </h2>
                   <h4>
-                      bla bla bla by sahib
+                      bla bla bla bla
                     </h4>
-                  <p>bla bla by sahib</p>
+                  <p>bla bla bla</p>
                   <a href="#" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>
                 </div>
                 <div class="col-md-6 hidden-xs">
@@ -171,7 +178,7 @@
   </div>
 
     <!--Showcase-->
-    
+
     <div class="showcase block block-border-bottom-grey">
 
       <div class="container">
@@ -179,7 +186,7 @@
         <h2 class="block-title">
             Events
           </h2>
-        <p>bla bla by sahib</p>
+        <p>bla bla bla</p>
         <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
           <div class="item">
             <a href="#" class="overlay-wrapper">
@@ -352,12 +359,12 @@
         </div>
       </div>
     </div>
- 
+
     <!-- Services -->
     <div class="services block block-bg-gradient block-border-bottom">
       <div class="container">
         <h2 class="block-title">
-            Our bla bla by sahib
+            Our bla bla bla
           </h2>
         <div class="row">
           <div class="col-md-4 text-center">
@@ -365,9 +372,9 @@
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
             <h4 class="text-weight-strong">
-              bla bla by sahib
+              bla bla bla
               </h4>
-            <p>bla bla bla by sahib</p>
+            <p>bla bla bla bla</p>
             <p>
               <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
             </p>
@@ -377,9 +384,9 @@
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
             <h4 class="text-weight-strong">
-              bla bla by sahib
+              bla bla bla
               </h4>
-            <p>bla bla by sahib</p>
+            <p>bla bla bla</p>
             <p>
               <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
             </p>
@@ -389,9 +396,9 @@
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
             <h4 class="text-weight-strong">
-                bla bla by sahib  Support
+                bla bla bla  Support
               </h4>
-            <p>bla bla by sahib</p>
+            <p>bla bla bla</p>
             <p>
               <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
             </p>
@@ -418,7 +425,7 @@
                 <li>bla bla</li>
                 <li>bla bla</li>
                 <li>bla bla</li>
-                <li>by sahib</li>
+                <li>bla</li>
               </ul>
               <a href="#" class="btn btn-primary btn-sm">Read more</a>
 
@@ -438,7 +445,7 @@
                 <li>bla bla</li>
                 <li>bla bla</li>
                 <li>bla bla</li>
-                <li>by sahib</li>
+                <li>bla</li>
               </ul>
               <a href="#" class="btn btn-primary btn-sm">Read more</a>
 
@@ -459,7 +466,7 @@
                 <li>bla bla</li>
                 <li>bla bla</li>
                 <li>bla bla</li>
-                <li>by sahib</li>
+                <li>bla</li>
               </ul>
               <a href="#" class="btn btn-primary btn-sm">read more</a>
 

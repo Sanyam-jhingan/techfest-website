@@ -35,6 +35,13 @@
 <!-- ======== @Region: body ======== -->
 
 <body class="fullscreen-centered page-register">
+  {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
   <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
   <div id="background-wrapper" class="benches" data-stellar-background-ratio="0.8">
 
@@ -43,9 +50,9 @@
       <div class="header">
         <div class="header-inner">
           <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
-          <a class="navbar-brand center-block" href="index.html" title="Home">
+          <a class="navbar-brand center-block" href="{% url "home" %}" title="Home">
             <h1 class="hidden">
-                <img src="img/logo.png" alt=" Logo">
+                <img src="{% static "img/logo.png" %}" alt=" Logo">
                 bro
               </h1>
           </a>
@@ -88,10 +95,11 @@
                         I agree to the <a href="#">terms and conditions</a>.
                       </label>
                   </div>
+
                   <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Me Up">
                 <!-- </fieldset> -->
               </form>
-              <p class="m-b-0 m-t">Already signed up? <a href="login.html">Login here</a>.</p>
+              <p class="m-b-0 m-t">Already signed up? <a href="{% url "accounts:login" %}">Login here</a>.</p>
               <div class="credits">
 
           </div>
@@ -102,17 +110,7 @@
       <!-- /row -->
     </div>
   </div>
-  <script type="text/javascript">
-  function tick_check(form)
-  {
-    if(!form.vehicle.checked)
-    { alert("please agree terms and conditions");}
-    else{
-      return true;
-    }
-  }
 
-  </script>
   <!-- Required JavaScript Libraries -->
   <script src="{% static "lib/jquery/jquery.min.js" %}"></script>
   <script src="{% static "lib/bootstrap/js/bootstrap.min.js" %}"></script>

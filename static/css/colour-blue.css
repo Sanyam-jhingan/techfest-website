@@ -1,29 +1,4 @@
-/*/////////////////////////////////////////////////////////////////////
- // 
- // Custom theme code styles
- // 
- // This is a skeleton starter template for overriding styles
- // set by Bootstrap & the theme
- // 
- // ----------------------------------------------------
- // 
- // Remove unused code & commenting for better performances
- // 
- // ----------------------------------------------------
- // 
- // @see - Usefuls tools online for editing
- // 1. http://charliepark.org/bootstrap_buttons/ - Button style generator
- // 2. http://www.colorzilla.com/gradient-editor/ - CSS3 gradient maker
- // 
- // @note
- // To ensure custom styles are picked up
- // wrap definitions in body tag
- // ie.
- // body .navbar-inner {
- //   background: #ff0000;
- // }
- // 
- /////////////////////////////////////////////////////////////////////*/
+
 a {
   color: #00a8cc;
 }
