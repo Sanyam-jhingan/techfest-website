@@ -18,7 +18,7 @@ def log_in(request):
             user=authenticate(request,username=u,password=p)
             if user is not None:
                 login(request,user)
-                messages.success(request, 'you are login')
+                messages.success(request, ' Welcome to TechFest '+ u )
                 return HttpResponseRedirect(reverse('home'))
         return render(request,'accounts/login.html')
 
@@ -33,8 +33,8 @@ def sign_up(request):
             email=form.cleaned_data["email"]
 
             user=User.objects.create_user(username=username,password=password,email=email)
-            messages.success(request, 'account created')
-            print(username,password)
+            messages.success(request,'account created')
+        
             return HttpResponseRedirect(reverse('accounts:login'))
     else:
         form=student()
