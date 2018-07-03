@@ -1,531 +1,326 @@
-
-{% extends "comman.html" %}
-
 {% load static %}
-{% block body %}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    GNDU
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="{% static 'css/material-kit.css' %}" rel="stylesheet" />
+</head>
 
-
-    <div class="hero" id="highlighted">
-      <div class="inner">
-        <!--Slideshow-->
-        <div id="highlighted-slider" class="container">
-          <div class="item-slider" data-toggle="owlcarousel" data-owlcarousel-settings='{"singleItem":true, "navigation":true, "transitionStyle":"fadeUp"}'>
-            <!--Slideshow content-->
-            <!--Slide 1-->
-            <div class="item">
-              <div class="row">
-                <div class="col-md-6 col-md-push-6 item-caption">
-                  <h2 class="h1 text-weight-light">
-                      Welcome to <span class="text-primary">techfest</span>
-                    </h2>
-                  <h4>
-                      blablabla   WRite something here  (HEADING) bla
-                  </h4>
-                  <p>bla bla bla </p>
-                  <a href="{% url "accounts:signup" %}" class="btn btn-more btn-lg i-right">Register <i class="fa fa-plus"></i></a>
-                </div>
-                <div class="col-md-6 col-md-pull-6 hidden-xs">
-                  <img src="{% static "img/slides/slide1.png" %}" alt="Slide 1" class="center-block img-responsive">
-                </div>
+<body class="landing-page sidebar-collapse">
+  <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-dark" color-on-scroll="100" id="sectionsNav" role="navigation-demo">
+            <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-translate">
+                <a class="btn btn-rose btn btn-primary" href="#pg-top">Brogrammers</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
               </div>
-            </div>
-            <!--Slide 2-->
-            <div class="item">
-              <div class="row">
-                <div class="col-md-6 text-right-md item-caption">
-                  <h2 class="h1 text-weight-light">
-                      <span class="text-primary">GNDU</span> TechFest
-                    </h2>
-                  <h4>
-                      bla bla bla bla
-                    </h4>
-                  <p>bla bla bla</p>
-                  <a href="#" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>
-                </div>
-                <div class="col-md-6 hidden-xs">
-                  <img src="{% static "img/slides/slide2.png" %}" alt="Slide 2" class="center-block img-responsive">
-                </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="about link" class="nav-link">
+                      about
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="events link" class="nav-link">
+                      events
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="login link" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                      Log-in
+                    </a>
+                  </li>
+                </ul>
               </div>
+              <!-- /.navbar-collapse -->
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-    <!--Showcase-->
-
-    <div class="showcase block block-border-bottom-grey">
-
-      <div class="container">
-
-        <h2 class="block-title">
-            Events
-          </h2>
-        <p>bla bla bla</p>
-        <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
-          {% for event in events %}
-
-            <div class="item">
-              <a href="#" class="overlay-wrapper">
-                  <img src="{{ event.image }}" alt="{{event.name}}" class="img-responsive underlay">
-                  <span class="overlay">
-                    <span class="overlay-content"> <span class="h4">{{event.name}}</span> </span>
-                  </span>
-                </a>
-              <div class="item-details bg-noise">
-                <h4 class="item-title">
-                    <a href="#">{{event.name}}</a>
-                  </h4>
-                <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-              </div>
-            </div>
-          {% endfor %}
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event2.png" %}" alt="Event 2 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 2</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 2</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event3.png" %}" alt="Event 3 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 3</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 3</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event4.png" %}" alt="Event 4 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 4</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 4</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event5.png" %}" alt="Event 5 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 5</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 5</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event6.png" %}" alt="Event 6 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 6</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 6</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event7.png" %}" alt="Event 7 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 7</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 7</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event8.png" %}" alt="Event 8 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 8</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 8</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event9.png" %}" alt="Event 9 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 9</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 9</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event10.png" %}" alt="Event 10 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 10</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 10</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event11.png" %}" alt="Event 11 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 11</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 11</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-          <div class="item">
-            <a href="#" class="overlay-wrapper">
-                <img src="{% static "img/showcase/Event12.png" %}" alt="Event 12 image" class="img-responsive underlay">
-                <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Event 12</span> </span>
-                </span>
-              </a>
-            <div class="item-details bg-noise">
-              <h4 class="item-title">
-                  <a href="#">Event 12</a>
-                </h4>
-              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <div class="services block block-bg-gradient block-border-bottom">
-      <div class="container">
-        <h2 class="block-title">
-            Our bla bla bla
-          </h2>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <span class="fa-stack fa-5x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
-            <h4 class="text-weight-strong">
-              bla bla bla
-              </h4>
-            <p>bla bla bla bla</p>
-            <p>
-              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
-            </p>
-          </div>
-          <div class="col-md-4 text-center">
-            <span class="fa-stack fa-5x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
-            <h4 class="text-weight-strong">
-              bla bla bla
-              </h4>
-            <p>bla bla bla</p>
-            <p>
-              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
-            </p>
-          </div>
-          <div class="col-md-4 text-center">
-            <span class="fa-stack fa-5x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
-            <h4 class="text-weight-strong">
-                bla bla bla  Support
-              </h4>
-            <p>bla bla bla</p>
-            <p>
-              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Pricing -->
-    <div class="block-contained">
-      <h2 class="block-title">
-        Our Sponsar
-        </h2>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="panel panel-default panel-pricing text-center">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                  status<em>brew</em>
-                </h4>
-            </div>
-            <div class="panel-pricing-price"># <span class="digits">a starup</span> </div>
-            <div class="panel-body">
-              <ul class="list-dotted">
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla</li>
-              </ul>
-              <a href="#" class="btn btn-primary btn-sm">Read more</a>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                  spon<em>1</em>
-                </h4>
-            </div>
-            <div class="panel-pricing-price"> <span class="digits">bla bla</span> .</div>
-            <div class="panel-body">
-              <ul class="list-dotted">
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla</li>
-              </ul>
-              <a href="#" class="btn btn-primary btn-sm">Read more</a>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 text-center">
-          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                  sponsar3
-                  <span class="panel-pricing-popular"><i class="fa fa-thumbs-up"></i> abc</span>
-                </h4>
-            </div>
-            <div class="panel-pricing-price">. <span class="digits">bla bla</span> .</div>
-            <div class="panel-body">
-              <ul class="list-dotted">
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla</li>
-              </ul>
-              <a href="#" class="btn btn-primary btn-sm">read more</a>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 text-center">
-          <div class="panel panel-default panel-pricing text-center">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                sponsar 4
-                </h4>
-            </div>
-            <div class="panel-pricing-price">abkc <span class="digits">xyz</span> asa.</div>
-            <div class="panel-body">
-              <ul class="list-dotted">
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla bla</li>
-                <li>bla bla</li>
-              </ul>
-              <a href="#" class="btn btn-primary btn-sm">REad more</a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--
-Background image callout with CSS overlay
-Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQuery .block-bg-overlay = overlays the background image, colour is inherited from block-bg-* classes .block-bg-overlay-NUMBER = determines opcacity value of overlay from 1-9 (default is 5) ie. .block-bg-overlay-2 or .block-bg-overlay-6
--->
-    <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK1088.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
-      <h2 class="h-xlg h1 m-a-0">
-          <span data-counter-up>100,000,0</span>s
-        </h2>
-      <h3 class="h-lg m-t-0 m-b-lg">
-          number of participant registered
-        </h3>
-      <p>
-        <a href="#" class="btn btn-more btn-lg i-right">Join today! <i class="fa fa-angle-right"></i></a>
-      </p>
-    </div>
-
-  <!-- /content -->
-  <!-- Call out block -->
-  <div class="block block-pd-sm block-bg-primary">
+            <!-- /.container-->
+          </nav>
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('{% static 'img/profile_city.jpg' %}')">
     <div class="container">
       <div class="row">
-        <h3 class="col-md-4">
-            Some of our Sponsar
-          </h3>
-        <div class="col-md-8">
-          <div class="row">
-            <!--Client logos should be within a 120px wide by 60px height image canvas-->
-            <div class="col-xs-6 col-md-2">
-              <a href="#" title="Client 1">
-                  <img src="{% static "img/clients/client1.png" %}" alt="Client 1 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="#" title="Client 2">
-                  <img src="{% static "img/clients/client2.png" %}" alt="Client 2 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="#" title="Client 3">
-                  <img src="{% static "img/clients/client3.png" %}" alt="Client 3 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="#" title="Client 4">
-                  <img src="{% static "img/clients/client4.png" %}" alt="Client 4 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="#" title="Client 5">
-                  <img src="{% static "img/clients/client5.png" %}" alt="Client 5 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="#" title="Client 6">
-                  <img src="{% static "img/clients/client6.png" %}" alt="Client 6 logo" class="img-responsive">
-                </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======== @Region: #footer ======== -->
-  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="{% static "img/bg_footer-map.png" %}" data-stellar-background-ratio="0.4">
-    <div class="container">
-
-      <div class="row" id="contact">
-
-        <div class="col-md-3">
-          <address>
-              <strong>Address</strong>
-              <br>
-              <i class="fa fa-map-pin fa-fw text-primary"></i> GNDU asr
-              <br>
-              <i class="fa fa-phone fa-fw text-primary"></i> 00000000
-              <br>
-              <i class="fa fa-envelope-o fa-fw text-primary"></i> gndu@gmail.com
-              <br>
-            </address>
-        </div>
-
         <div class="col-md-6">
-          <h4 class="text-uppercase">
-              Contact Us
-            </h4>
-          <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
+          <h1 class="title">GNDU Techfest!</h1>
+          <h4>Description..............</h4>
+          <br>
+          <a href="signup link" target="_blank" class="btn btn-danger btn-raised btn-lg">
+            <i></i> Sign-up
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="title">Events</h2>
+            <h5 class="description">This is the paragraph where you can write general details about the events.</h5>
+          </div>
+        </div>
+        <!--         carousel  -->
+    <div class="section" id="carousel">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mr-auto ml-auto">
+            <!-- Carousel Card -->
+            <div class="card card-raised card-carousel">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="{% static 'img/bg2.jpg' %}" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h4>
+                        <i class="material-icons">location_on</i> Event 1
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'img/bg3.jpg' %}" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h4>
+                        <i class="material-icons">location_on</i> Event 2
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'img/bg.jpg' %}" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h4>
+                        <i class="material-icons">location_on</i> Event 3
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <!-- End Carousel Card -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards">
+
+                <div class="container">
+                    <div class="title">
+                        <h3>Sponsors</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <div class="card card-profile">
+                                <div class="card-header card-header-image">
+                                    <a href="#pablo">
+                                        <img class="img" src="{% static 'img/examples/card-profile4.jpg' %}">
+
+                                        <div class="card-title">
+                                            Mandeep
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-body ">
+                                    <h6 class="card-category text-info">Web Designer</h6>
+
+                                    <p class="card-description">
+                                        Don&apos;t be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens&#x2019; bed design but the back is...
+                                    </p>
+                                        </div>
+                        </div>
+
+
+                                </div>
+                       </div>
+                </div>
+
+            </div>
+    
+      <div class="section text-center">
+        <h2 class="title">Here is our team</h2>
+        <div class="team">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="team-player">
+                <div class="card card-plain">
+                  <div class="col-md-6 ml-auto mr-auto">
+                    <img src="{% static 'img/faces/avatar.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                  </div>
+                  <h4 class="card-title">Gigi Hadid
+                    <br>
+                    <small class="card-description text-muted">Model</small>
+                  </h4>
+                  <div class="card-body">
+                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                  </div>
+                  <div class="card-footer justify-content-center">
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-player">
+                <div class="card card-plain">
+                  <div class="col-md-6 ml-auto mr-auto">
+                    <img src="{% static 'img/faces/christian.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                  </div>
+                  <h4 class="card-title">Christian Louboutin
+                    <br>
+                    <small class="card-description text-muted">Designer</small>
+                  </h4>
+                  <div class="card-body">
+                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                  </div>
+                  <div class="card-footer justify-content-center">
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-player">
+                <div class="card card-plain">
+                  <div class="col-md-6 ml-auto mr-auto">
+                    <img src="{% static 'img/faces/kendall.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                  </div>
+                  <h4 class="card-title">Kendall Jenner
+                    <br>
+                    <small class="card-description text-muted">Model</small>
+                  </h4>
+                  <div class="card-body">
+                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                  </div>
+                  <div class="card-footer justify-content-center">
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
+                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-contacts">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="text-center title">Contact us</h2>
+            <h4 class="text-center description">something about our company</h4>
+            <form class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Your Name</label>
+                    <input type="email" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Your Email</label>
+                    <input type="email" class="form-control">
+                    <span class="bmd-help">We'll never share your email with anyone else.</span>
+                  </div>
+                </div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
+                <label for="exampleMessage" class="bmd-label-floating">Your Message</label>
+                <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
+              <div class="row">
+                <div class="col-md-4 ml-auto mr-auto text-center">
+                  <button class="btn btn-primary btn-raised">
+                    Send Message
+                  </button>
+                </div>
               </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
         </div>
-
-        <div class="col-md-3">
-          <h4 class="text-uppercase">
-              Follow Us On:
-            </h4>
-          <!--social media icons-->
-          <div class="social-media social-media-stacked">
-            <!--@todo: replace with company social media details-->
-            <!-- <a href="#"><i class="fa fa-twitter fa-fw"></i> Twitter</a> -->
-            <a href="#"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-            <!-- <a href="#"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a> -->
-            <a href="#"><i class="fa fa-instagram fa-fw"></i> Instagram</a>
-          </div>
-        </div>
-
       </div>
-
-      <div class="row subfooter">
-        <!--@todo: replace with company copyright details-->
-        <div class="col-md-7">
-          <p>Copyright © Brogrammer</p>
-          <div class="credits">
-
-
-          </div>
-        </div>
-        <div class="col-md-5">
-          <ul class="list-inline pull-right">
-            <li><a href="#">Terms</a></li>
-            <li><a href="{% url "privacy"  %}">Privacy</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
+    </div>
+  </div>
+</div>
+  <footer class="footer footer-default">
+    <div class="container">
+      <nav class="float-left">
+        <ul>
+          <li>
+            <a href="home link">
+              Brogrammers
+            </a>
+          </li>
+          <li>
+            <a href="about us link">
+              About Us
+            </a>
+          </li>
+            <a href="terms and conditions link">
+              terms and conditions
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, made with <i class="material-icons">favorite</i> by
+        <a href="https://www.creative-tim.com" target="_blank">Brogrammers</a> for a (stupid) project.
       </div>
-
-      <a href="#top" class="scrolltop">Top</a>
-
     </div>
   </footer>
+  <!--   Core JS Files   -->
+  <script src="{% static 'js/core/jquery.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/core/popper.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/core/bootstrap-material-design.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/plugins/moment.min.js' %}"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="{% static 'js/plugins/bootstrap-datetimepicker.js' %}" type="text/javascript"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="{% static 'js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+  <!--	Plugin for Sharrre btn -->
+  <script src="{% static 'js/plugins/jquery.sharrre.js' %}" type="text/javascript"></script>
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="{% static 'js/material-kit.js?v=2.0.4' %}" type="text/javascript"></script>
+</body>
 
-
-  {% endblock  %}
+</html>
