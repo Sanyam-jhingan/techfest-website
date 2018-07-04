@@ -23,7 +23,7 @@
             <div class="container">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-translate">
-                <a class="btn btn-rose btn btn-primary" href="#pg-top">Brogrammers</a>
+                <a class="btn btn-rose btn btn-primary" href="{% url "home" %}">Brogrammers</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="navbar-toggler-icon"></span>
@@ -36,17 +36,17 @@
               <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                    <a href="about link" class="nav-link">
+                    <a href="{% url "about" %}" class="nav-link">
                       about
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="events link" class="nav-link">
+                    <a href="{% url "events:event" %}" class="nav-link">
                       events
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="login link" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                    <a href="{% url "accounts:login" %}" class="btn btn-rose btn-raised btn-round">
                       Log-in
                     </a>
                   </li>
@@ -63,7 +63,7 @@
           <h1 class="title">GNDU Techfest!</h1>
           <h4>Description..............</h4>
           <br>
-          <a href="signup link" target="_blank" class="btn btn-danger btn-raised btn-lg">
+          <a href="{% url "accounts:signup" %}" target="_blank" class="btn btn-danger btn-raised btn-lg">
             <i></i> Sign-up
           </a>
         </div>
@@ -145,7 +145,7 @@
                             <div class="card card-profile">
                                 <div class="card-header card-header-image">
                                     <a href="#pablo">
-                                        <img class="img" src="{% static 'img/examples/card-profile4.jpg' %}">
+                                        <img class="img" src="{% static 'img/examples/profile.png' %}">
 
                                         <div class="card-title">
                                             Mandeep
@@ -167,9 +167,9 @@
                 </div>
 
             </div>
-    
+
       <div class="section text-center">
-        <h2 class="title">Here is our team</h2>
+        <h2 class="title">Here is our team CESS</h2>
         <div class="team">
           <div class="row">
             <div class="col-md-4">
@@ -178,7 +178,7 @@
                   <div class="col-md-6 ml-auto mr-auto">
                     <img src="{% static 'img/faces/avatar.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                   </div>
-                  <h4 class="card-title">Gigi Hadid
+                  <h4 class="card-title">Name
                     <br>
                     <small class="card-description text-muted">Model</small>
                   </h4>
@@ -198,9 +198,9 @@
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="col-md-6 ml-auto mr-auto">
-                    <img src="{% static 'img/faces/christian.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                    <img src="{% static 'img/faces/avatar.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                   </div>
-                  <h4 class="card-title">Christian Louboutin
+                  <h4 class="card-title">NAMe1
                     <br>
                     <small class="card-description text-muted">Designer</small>
                   </h4>
@@ -219,9 +219,9 @@
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="col-md-6 ml-auto mr-auto">
-                    <img src="{% static 'img/faces/kendall.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                    <img src="{% static 'img/faces/avatar.jpg' %}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                   </div>
-                  <h4 class="card-title">Kendall Jenner
+                  <h4 class="card-title">NAME2
                     <br>
                     <small class="card-description text-muted">Model</small>
                   </h4>
@@ -284,16 +284,16 @@
       <nav class="float-left">
         <ul>
           <li>
-            <a href="home link">
+            <a href="{% url "home" %}">
               Brogrammers
             </a>
           </li>
           <li>
-            <a href="about us link">
+            <a href="{% url "about" %}">
               About Us
             </a>
           </li>
-            <a href="terms and conditions link">
+            <a href="{% url "privacy" %}">
               terms and conditions
             </a>
           </li>
@@ -304,7 +304,7 @@
         <script>
           document.write(new Date().getFullYear())
         </script>, made with <i class="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com" target="_blank">Brogrammers</a> for a (stupid) project.
+        <a href="{% url "home" %}" target="_blank">Brogrammers</a> for a (stupid) project.
       </div>
     </div>
   </footer>
