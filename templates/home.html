@@ -24,7 +24,7 @@
             <div class="container">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-translate">
-                <a class="btn btn-rose btn btn-primary" href="#pg-top">Brogrammers</a>
+                <a class="btn btn-rose btn btn-primary" <a href="{% url "home"  %}">Brogrammers</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@
                     </a>
                   </li>
                   <li class="dropdown nav-item">
-                    <a href="events link" class="nav-link">
+                    <a href="{% url "events:event" %}" class="nav-link">
                       events
                     </a>
                   </li>
@@ -257,7 +257,7 @@
                                             <div class="col-lg-4 col-md-6">
                             <button class="btn btn-rose btn-round" data-toggle="modal" data-target="#noticeModal">
                                <i class="material-icons">info_outline</i>
-                               How to participate
+                               Get started
                            </button>
                         </div>
                                             <a href="#pablo" class="btn btn-just-icon btn-white btn-link">
